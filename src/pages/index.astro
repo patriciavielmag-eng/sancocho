@@ -1,233 +1,559 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
 
 const services = [
-	{ id: 1, title: 'Diseño\n& Marca', bg: 'bg-menu-1', text: 'text-zinc-900', link: '/servicios#diseno' },
-	{ id: 2, title: '3D & Motion', bg: 'bg-menu-2', text: 'text-zinc-900', link: '/servicios#3d' },
-	{ id: 3, title: 'Web Plans', bg: 'bg-menu-3', text: 'text-zinc-900', link: '/servicios#web' },
-	{ id: 4, title: 'Creación\nde Content', bg: 'bg-menu-4', text: 'text-zinc-900', link: '/servicios#content' },
-	{ id: 5, title: 'Impresión\n& Mercha', bg: 'bg-menu-5', text: 'text-zinc-900', link: '/servicios#impresion' },
-	{ id: 6, title: 'Marketing\n& Campañas', bg: 'bg-menu-6', text: 'text-white', link: '/servicios#marketing' },
+	{
+		id: 1,
+		title: "Diseño\n& Marca",
+		bg: "bg-menu-1",
+		text: "text-zinc-900",
+		link: "/servicios#diseno",
+	},
+	{
+		id: 2,
+		title: "3D & Motion",
+		bg: "bg-menu-2",
+		text: "text-zinc-900",
+		link: "/servicios#3d",
+	},
+	{
+		id: 3,
+		title: "Web Plans",
+		bg: "bg-menu-3",
+		text: "text-zinc-900",
+		link: "/servicios#web",
+	},
+	{
+		id: 4,
+		title: "Creación\nde Content",
+		bg: "bg-menu-4",
+		text: "text-zinc-900",
+		link: "/servicios#content",
+	},
+	{
+		id: 5,
+		title: "Impresión\n& Mercha",
+		bg: "bg-menu-5",
+		text: "text-zinc-900",
+		link: "/servicios#impresion",
+	},
+	{
+		id: 6,
+		title: "Marketing\n& Campañas",
+		bg: "bg-menu-6",
+		text: "text-white",
+		link: "/servicios#marketing",
+	},
 ];
 
 const team = [
-	{ name: 'Carlos', role: 'Designer', quote: 'Todo entra por los ojos.', img: 'https://placehold.co/150x150/png?text=Carlos', bg: 'bg-menu-1' },
-	{ name: 'Ana', role: '3D Artist', quote: 'El volumen lo es todo.', img: 'https://placehold.co/150x150/png?text=Ana', bg: 'bg-menu-2' },
-	{ name: 'Luis', role: 'Dev', quote: 'Si funciona, no lo toques.', img: 'https://placehold.co/150x150/png?text=Luis', bg: 'bg-menu-3' },
-	{ name: 'Marta', role: 'Marketing', quote: 'Hagamos ruido.', img: 'https://placehold.co/150x150/png?text=Marta', bg: 'bg-menu-4' },
+	{
+		name: "Carlos",
+		role: "Designer",
+		quote: "Todo entra por los ojos.",
+		img: "https://placehold.co/150x150/png?text=Carlos",
+		bg: "bg-menu-1",
+	},
+	{
+		name: "Ana",
+		role: "3D Artist",
+		quote: "El volumen lo es todo.",
+		img: "https://placehold.co/150x150/png?text=Ana",
+		bg: "bg-menu-2",
+	},
+	{
+		name: "Luis",
+		role: "Dev",
+		quote: "Si funciona, no lo toques.",
+		img: "https://placehold.co/150x150/png?text=Luis",
+		bg: "bg-menu-3",
+	},
+	{
+		name: "Marta",
+		role: "Marketing",
+		quote: "Hagamos ruido.",
+		img: "https://placehold.co/150x150/png?text=Marta",
+		bg: "bg-menu-4",
+	},
 ];
 
 const plans = [
-	{ price: 100, features: ['Logotipo', 'Paleta de color', 'Tipografía'], bg: 'bg-brand-orange text-white' },
-	{ price: 200, features: ['Branding Completo', 'Papelería', 'Redes Sociales'], bg: 'bg-white text-zinc-900' },
-	{ price: 300, features: ['Web', 'SEO', 'Mantenimiento'], bg: 'bg-white text-zinc-900' },
+	{
+		price: 100,
+		features: ["Logotipo", "Paleta de color", "Tipografía"],
+		bg: "bg-brand-orange text-white",
+	},
+	{
+		price: 200,
+		features: ["Branding Completo", "Papelería", "Redes Sociales"],
+		bg: "bg-white text-zinc-900",
+	},
+	{
+		price: 300,
+		features: ["Web", "SEO", "Mantenimiento"],
+		bg: "bg-white text-zinc-900",
+	},
 ];
 ---
 
 <Layout title="Sancocho | Studio Creativo">
-	<!-- Hero Section -->
-	<section class="relative min-h-[60vh] flex items-center justify-center py-20 overflow-hidden">
-		<div class="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"></div>
-		
-        <div class="relative z-10 text-center w-[80%] mx-auto px-4">
-            <div class="flex justify-center items-center gap-4 sm:gap-8 mb-6">
-                <span class="text-brand-orange text-6xl animate-spin-slow">❋</span>
-                <div class="bg-white rounded-full p-12 shadow-sm border border-orange-100 relative">
-                    <h1 class="font-serif text-5xl md:text-7xl leading-tight text-zinc-900">
-                        <span class="block text-2xl md:text-3xl italic text-brand-orange mb-2 font-sans font-light">Un</span>
-                        Studio<br/>Creativo
-                        <span class="block text-2xl md:text-3xl mt-2 font-sans italic lowercase">con sabor</span>
-                    </h1>
-                     <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full border border-dashed border-orange-200 animate-pulse"></div>
-                </div>
-                <span class="text-brand-orange text-6xl animate-spin-slow duration-700">❋</span>
-            </div>
-        </div>
-	</section>
+	<main
+		class="h-screen w-full overflow-hidden relative dark:bg-zinc-950 dark:text-gray-100"
+	>
+		<div
+			id="scroll-container"
+			class="h-full w-full transition-transform duration-1000 ease-in-out"
+		>
+			<!-- Hero Section -->
+			<section
+				class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+			>
+				<div
+					class="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+				>
+				</div>
 
-	<!-- Menu Section -->
-	<section class="w-[80%] mx-auto px-4 py-12" id="menu">
-        <div class="flex justify-between items-center mb-8">
-            <span class="text-2xl font-black">*</span>
-            <h2 class="text-4xl font-black uppercase tracking-tighter">El Menú</h2>
-            <span class="text-2xl font-black">*</span>
-        </div>
-
-		<div class="space-y-3">
-			{services.map((service, index) => (
-				<a href={service.link} class={`group block rounded-2xl p-6 transition-transform hover:scale-[1.02] hover:-rotate-1 ${service.bg} ${service.text} relative overflow-hidden border border-black/5`}>
-					<div class="flex items-center justify-between">
-						<div class="flex items-center gap-6">
-							<span class="flex items-center justify-center w-8 h-8 rounded-full border border-current text-sm font-bold opacity-60">
-								{service.id}
-							</span>
-							<h3 class="text-3xl md:text-4xl font-medium tracking-tight whitespace-pre-line leading-none">
-								{service.title}
-							</h3>
+				<div class="relative z-10 text-center w-[80%] mx-auto px-4">
+					<div
+						class="flex justify-center items-center gap-4 sm:gap-8 mb-6"
+					>
+						<span
+							class="text-brand-orange text-6xl animate-spin-slow"
+							>❋</span
+						>
+						<div
+							class="bg-white dark:bg-zinc-900 rounded-full p-12 shadow-sm border border-orange-100 dark:border-zinc-800 relative transition-colors duration-500"
+						>
+							<h1
+								class="font-serif text-5xl md:text-7xl leading-tight text-zinc-900 dark:text-white"
+							>
+								<span
+									class="block text-2xl md:text-3xl italic text-brand-orange mb-2 font-sans font-light"
+									>Un</span
+								>
+								Studio<br />Creativo
+								<span
+									class="block text-2xl md:text-3xl mt-2 font-sans italic lowercase"
+									>con sabor</span
+								>
+							</h1>
+							<div
+								class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full border border-dashed border-orange-200 animate-pulse"
+							>
+							</div>
 						</div>
-						<div class="transform group-hover:translate-x-2 transition-transform">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                            </svg>
+						<span
+							class="text-brand-orange text-6xl animate-spin-slow duration-700"
+							>❋</span
+						>
+					</div>
+				</div>
+			</section>
+
+			<!-- Menu Section -->
+			<section
+				class="h-screen w-full flex flex-col justify-center px-4"
+				id="menu"
+			>
+				<div class="w-[80%] mx-auto">
+					<div class="flex justify-between items-center mb-8">
+						<span class="text-6xl font-black">*</span>
+						<h2
+							class="text-8xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white"
+						>
+							El Menú
+						</h2>
+						<span class="text-6xl font-black">*</span>
+					</div>
+
+					<div class="space-y-3">
+						{
+							services.map((service, index) => (
+								<a
+									href={service.link}
+									class={`group flex flex-col justify-center h-40 px-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${service.bg} ${service.text} relative overflow-hidden border border-black/5 dark:border-white/10`}
+								>
+									<div class="flex items-center justify-between w-full">
+										<div class="flex items-center gap-6">
+											<span class="flex items-center justify-center w-8 h-8 rounded-full border border-current text-sm font-bold opacity-60">
+												{service.id}
+											</span>
+											<h3 class="text-3xl md:text-4xl font-medium tracking-tight whitespace-pre-line leading-none">
+												{service.title}
+											</h3>
+										</div>
+										<div class="transform group-hover:translate-x-2 transition-transform">
+											<svg
+												xmlns="http://www.w3.org/2000/svg"
+												class="h-10 w-10"
+												fill="none"
+												viewBox="0 0 24 24"
+												stroke="currentColor"
+											>
+												<path
+													stroke-linecap="round"
+													stroke-linejoin="round"
+													stroke-width="2"
+													d="M13 7l5 5m0 0l-5 5m5-5H6"
+												/>
+											</svg>
+										</div>
+									</div>
+								</a>
+							))
+						}
+					</div>
+				</div>
+			</section>
+
+			<!-- Portfolio Section -->
+			<section
+				data-theme="dark"
+				class="h-screen w-full flex flex-col justify-center bg-zinc-900 text-white px-4 overflow-hidden"
+			>
+				<div class="w-[80%] mx-auto">
+					<h2
+						class="font-serif text-[15vw] leading-[0.8] text-center mb-12 uppercase tracking-tighter"
+					>
+						Port<span class="italic font-sans font-light">a</span
+						>folio
+					</h2>
+
+					<p
+						class="text-center font-mono text-sm mb-12 max-w-md mx-auto"
+					>
+						Cultivando ideas frescas desde el trópico para el mundo
+						digital.
+					</p>
+
+					<div
+						class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]"
+					>
+						<div
+							class="md:col-span-5 row-span-2 bg-brand-orange rounded-3xl p-6 relative group overflow-hidden"
+						>
+							<div
+								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
+								style="background-image: url('https://placehold.co/600x800/orange/white?text=Branding');"
+							>
+							</div>
+							<div class="absolute bottom-6 left-6">
+								<span
+									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
+									>Branding</span
+								>
+							</div>
+						</div>
+						<div
+							class="md:col-span-7 row-span-1 bg-menu-4 rounded-3xl p-6 relative group overflow-hidden"
+						>
+							<div
+								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
+								style="background-image: url('https://placehold.co/800x400/purple/white?text=Web+Design');"
+							>
+							</div>
+							<div class="absolute bottom-6 left-6">
+								<span
+									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
+									>Web Design</span
+								>
+							</div>
+						</div>
+						<div
+							class="md:col-span-3 row-span-1 bg-menu-3 rounded-3xl p-6 relative group overflow-hidden"
+						>
+							<div
+								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
+								style="background-image: url('https://placehold.co/400x400/green/black?text=3D');"
+							>
+							</div>
+							<div class="absolute bottom-6 left-6">
+								<span
+									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
+									>3D</span
+								>
+							</div>
+						</div>
+						<div
+							class="md:col-span-4 row-span-1 bg-white rounded-3xl p-6 relative group overflow-hidden flex items-center justify-center"
+						>
+							<span
+								class="text-black font-serif text-3xl text-center"
+								>Ver más<br />proyectos &rarr;</span
+							>
 						</div>
 					</div>
-                    <!-- Decorative doodles -->
-                    <div class="absolute -bottom-4 -right-4 opacity-10 transform rotate-12">
-                        <svg width="100" height="100" viewBox="0 0 100 100" fill="currentColor">
-                           <circle cx="50" cy="50" r="40" />
-                        </svg>
-                    </div>
-				</a>
-			))}
-		</div>
-	</section>
-
-	<!-- Portfolio Section -->
-	<section class="bg-zinc-900 text-white py-20 px-4 overflow-hidden rounded-t-[3rem] mt-12">
-		<div class="w-[80%] mx-auto">
-			<h2 class="font-serif text-[15vw] leading-[0.8] text-center mb-12 uppercase tracking-tighter">
-				Port<span class="italic font-sans font-light">a</span>folio
-			</h2>
-            
-            <p class="text-center font-mono text-sm mb-12 max-w-md mx-auto">Cultivando ideas frescas desde el trópico para el mundo digital.</p>
-
-			<div class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]">
-				<div class="md:col-span-5 row-span-2 bg-brand-orange rounded-3xl p-6 relative group overflow-hidden">
-                    <div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110" style="background-image: url('https://placehold.co/600x800/orange/white?text=Branding');"></div>
-                    <div class="absolute bottom-6 left-6">
-                        <span class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">Branding</span>
-                    </div>
 				</div>
-                <div class="md:col-span-7 row-span-1 bg-menu-4 rounded-3xl p-6 relative group overflow-hidden">
-                     <div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110" style="background-image: url('https://placehold.co/800x400/purple/white?text=Web+Design');"></div>
-                      <div class="absolute bottom-6 left-6">
-                        <span class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">Web Design</span>
-                    </div>
-                </div>
-				<div class="md:col-span-3 row-span-1 bg-menu-3 rounded-3xl p-6 relative group overflow-hidden">
-                     <div class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110" style="background-image: url('https://placehold.co/400x400/green/black?text=3D');"></div>
-                      <div class="absolute bottom-6 left-6">
-                        <span class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold">3D</span>
-                    </div>
-                </div>
-                <div class="md:col-span-4 row-span-1 bg-white rounded-3xl p-6 relative group overflow-hidden flex items-center justify-center">
-                    <span class="text-black font-serif text-3xl text-center">Ver más<br/>proyectos &rarr;</span>
-                </div>
-			</div>
-		</div>
-	</section>
+			</section>
 
-	<!-- Team Section -->
-	<section class="w-[80%] mx-auto px-4 py-20">
-		<h2 class="text-6xl md:text-8xl font-sans font-light mb-16 text-center tracking-tighter">
-            El <span class="font-serif italic font-bold">Mix</span> Team
-        </h2>
+			<!-- Team Section -->
+			<section class="h-screen w-full flex flex-col justify-center px-4">
+				<div class="w-[80%] mx-auto">
+					<h2
+						class="text-6xl md:text-8xl font-sans font-light mb-16 text-center tracking-tighter text-zinc-900 dark:text-white"
+					>
+						El <span class="font-serif italic font-bold">Mix</span> Team
+					</h2>
 
-		<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-			{team.map((member) => (
-				<div class="relative group">
-					<div class={`aspect-square rounded-3xl overflow-hidden mb-4 ${member.bg}`}>
-						<img src={member.img} alt={member.name} class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0" />
-					</div>
-                    <div class="bg-white p-4 rounded-2xl shadow-sm border border-zinc-100 absolute bottom-8 left-4 right-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                        <p class="font-serif italic text-lg mb-2">"{member.quote}"</p>
-                         <h3 class="font-bold uppercase text-sm tracking-wide">{member.name}</h3>
-                         <span class="text-xs text-zinc-500">{member.role}</span>
-                    </div>
-				</div>
-			))}
-		</div>
-	</section>
-
-	<!-- Pricing Section -->
-	<section class="w-[80%] mx-auto px-4 py-20 bg-brand-cream">
-        <div class="text-center mb-16">
-            <span class="uppercase tracking-widest text-xs font-bold text-zinc-400 mb-2 block">Suscripciones</span>
-		    <h2 class="text-5xl md:text-7xl font-serif text-zinc-900 leading-none">
-                Planes<br/>Mensuales
-            </h2>
-        </div>
-
-		<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-			{plans.map((plan) => (
-				<div class={`rounded-[2rem] p-8 flex flex-col h-full border border-black/5 shadow-sm transition-transform hover:-translate-y-2 ${plan.bg}`}>
-                    <div class="mb-8">
-                         <span class="text-sm font-bold uppercase tracking-widest opacity-60">Plan Mensual</span>
-                    </div>
-					<ul class="flex-grow space-y-4 mb-8">
-						{plan.features.map((feature) => (
-							<li class="flex items-center text-lg">
-                                <span class="mr-2 text-xl">•</span> {feature}
-                            </li>
-						))}
-					</ul>
-					<div class="text-5xl font-serif font-bold tracking-tighter">
-						${plan.price}
+					<div
+						class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+					>
+						{
+							team.map((member) => (
+								<div class="relative group">
+									<div
+										class={`aspect-square rounded-3xl overflow-hidden mb-4 ${member.bg}`}
+									>
+										<img
+											src={member.img}
+											alt={member.name}
+											class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
+										/>
+									</div>
+									<div class="bg-white dark:bg-zinc-800 p-4 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-700 absolute bottom-8 left-4 right-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+										<p class="font-serif italic text-lg mb-2 text-zinc-900 dark:text-gray-100">
+											"{member.quote}"
+										</p>
+										<h3 class="font-bold uppercase text-sm tracking-wide text-zinc-900 dark:text-gray-100">
+											{member.name}
+										</h3>
+										<span class="text-xs text-zinc-500 dark:text-zinc-400">
+											{member.role}
+										</span>
+									</div>
+								</div>
+							))
+						}
 					</div>
 				</div>
-			))}
-		</div>
-	</section>
+			</section>
 
-	<!-- Footer -->
-	<footer class="bg-brand-orange text-zinc-900 pt-20 pb-12 px-4 rounded-t-[3rem] -mt-10 relative z-10">
-        <div class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-             <div class="bg-brand-orange p-4 rounded-full">
-                <div class="w-4 h-4 bg-white rounded-full"></div>
-             </div>
-        </div>
-        
-		<div class="w-[80%] mx-auto text-center">
-            <div class="mb-12">
-                 <svg class="w-full h-auto max-w-md mx-auto mb-8 text-black opacity-20" viewBox="0 0 200 50">
-                     <!-- squiggle -->
-                     <path d="M10,25 Q50,5 90,25 T190,25" fill="none" stroke="currentColor" stroke-width="2"/>
-                 </svg>
-			    <h2 class="text-[12vw] font-sans font-bold leading-none tracking-tighter mb-4">Hablamos?</h2>
-                <a href="/contacto" class="inline-block px-8 py-3 bg-black text-white rounded-full font-bold text-lg hover:bg-zinc-800 transition-colors">
-                    Iniciar Proyecto
-                </a>
-            </div>
+			<!-- Pricing Section -->
+			<section
+				class="h-screen w-full flex flex-col justify-center bg-brand-cream dark:bg-zinc-900 px-4 transition-colors duration-500"
+			>
+				<div class="w-[80%] mx-auto">
+					<div class="text-center mb-16">
+						<span
+							class="uppercase tracking-widest text-xs font-bold text-zinc-400 mb-2 block"
+							>Suscripciones</span
+						>
+						<h2
+							class="text-5xl md:text-7xl font-serif text-zinc-900 leading-none"
+						>
+							Planes<br />Mensuales
+						</h2>
+					</div>
 
-			<div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left text-sm font-medium border-t border-black/10 pt-12">
-				<div>
-					<h4 class="mb-4 opacity-50">Social</h4>
-					<ul class="space-y-2">
-						<li><a href="#" class="hover:underline">Instagram</a></li>
-						<li><a href="#" class="hover:underline">Twitter</a></li>
-						<li><a href="#" class="hover:underline">Dribbble</a></li>
-					</ul>
+					<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+						{
+							plans.map((plan) => (
+								<div
+									class={`rounded-[2rem] p-8 flex flex-col h-full border border-black/5 dark:border-white/10 shadow-sm transition-transform hover:-translate-y-2 ${plan.bg}`}
+								>
+									<div class="mb-8">
+										<span class="text-sm font-bold uppercase tracking-widest opacity-60">
+											Plan Mensual
+										</span>
+									</div>
+									<ul class="flex-grow space-y-4 mb-8">
+										{plan.features.map((feature) => (
+											<li class="flex items-center text-lg">
+												<span class="mr-2 text-xl">
+													•
+												</span>{" "}
+												{feature}
+											</li>
+										))}
+									</ul>
+									<div class="text-5xl font-serif font-bold tracking-tighter">
+										${plan.price}
+									</div>
+								</div>
+							))
+						}
+					</div>
 				</div>
-				<div>
-					<h4 class="mb-4 opacity-50">Contacto</h4>
-					<ul class="space-y-2">
-						<li>hola@sancocho.studio</li>
-						<li>+34 000 000 000</li>
-					</ul>
+			</section>
+
+			<!-- Footer (as a section) -->
+			<section
+				class="h-screen w-full flex flex-col justify-center bg-brand-orange text-zinc-900 relative z-10"
+			>
+				<div
+					class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+				>
+					<div class="bg-brand-orange p-4 rounded-full">
+						<div class="w-4 h-4 bg-white rounded-full"></div>
+					</div>
 				</div>
-				<div>
-					<h4 class="mb-4 opacity-50">Legal</h4>
-					<ul class="space-y-2">
-						<li>Privacidad</li>
-						<li>Términos</li>
-					</ul>
+
+				<div class="w-[80%] mx-auto text-center">
+					<div class="mb-12">
+						<svg
+							class="w-full h-auto max-w-md mx-auto mb-8 text-black opacity-20"
+							viewBox="0 0 200 50"
+						>
+							<path
+								d="M10,25 Q50,5 90,25 T190,25"
+								fill="none"
+								stroke="currentColor"
+								stroke-width="2"></path>
+						</svg>
+						<h2
+							class="text-[12vw] font-sans font-bold leading-none tracking-tighter mb-4"
+						>
+							Hablamos?
+						</h2>
+						<a
+							href="/contacto"
+							class="inline-block px-8 py-3 bg-black text-white rounded-full font-bold text-lg hover:bg-zinc-800 transition-colors"
+						>
+							Iniciar Proyecto
+						</a>
+					</div>
+
+					<div
+						class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left text-sm font-medium border-t border-black/10 pt-12"
+					>
+						<div>
+							<h4 class="mb-4 opacity-50">Social</h4>
+							<ul class="space-y-2">
+								<li>
+									<a href="#" class="hover:underline"
+										>Instagram</a
+									>
+								</li>
+								<li>
+									<a href="#" class="hover:underline"
+										>Twitter</a
+									>
+								</li>
+								<li>
+									<a href="#" class="hover:underline"
+										>Dribbble</a
+									>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="mb-4 opacity-50">Contacto</h4>
+							<ul class="space-y-2">
+								<li>hola@sancocho.studio</li>
+								<li>+34 000 000 000</li>
+							</ul>
+						</div>
+						<div>
+							<h4 class="mb-4 opacity-50">Legal</h4>
+							<ul class="space-y-2">
+								<li>Privacidad</li>
+								<li>Términos</li>
+							</ul>
+						</div>
+						<div class="md:text-right">
+							<p class="opacity-50">© 2024 Sancocho Studio</p>
+							<p class="mt-2">Hecho con sabor.</p>
+						</div>
+					</div>
 				</div>
-                <div class="md:text-right">
-                    <p class="opacity-50">© 2024 Sancocho Studio</p>
-                    <p class="mt-2">Hecho con sabor.</p>
-                </div>
-			</div>
+			</section>
 		</div>
-	</footer>
+	</main>
+
+	<script>
+		let currentSection = 0;
+		let isScrolling = false;
+		const container = document.getElementById("scroll-container");
+		const sections = document.querySelectorAll("main section");
+		const totalSections = sections.length;
+
+		// Handle Wheel Event
+		window.addEventListener(
+			"wheel",
+			(e) => {
+				// Prevent default simply blocks the native scroll
+				// But we must catch the intention
+				e.preventDefault();
+
+				if (isScrolling) return;
+
+				const direction = e.deltaY > 0 ? 1 : -1;
+
+				// Threshold to avoid accidental sensitivity
+				if (Math.abs(e.deltaY) < 10) return;
+
+				const nextSection = currentSection + direction;
+
+				if (nextSection >= 0 && nextSection < totalSections) {
+					scrollToSection(nextSection);
+				}
+			},
+			{ passive: false },
+		);
+
+		// Handle Keyboard Arrows
+		window.addEventListener("keydown", (e) => {
+			if (["ArrowUp", "ArrowDown", " "].includes(e.key)) {
+				e.preventDefault();
+				if (isScrolling) return;
+
+				if (e.key === "ArrowDown" || e.key === " ") {
+					if (currentSection < totalSections - 1)
+						scrollToSection(currentSection + 1);
+				} else if (e.key === "ArrowUp") {
+					if (currentSection > 0) scrollToSection(currentSection - 1);
+				}
+			}
+		});
+
+		// Initial check
+		updateNavbarColor(0);
+
+		function scrollToSection(index: number) {
+			isScrolling = true;
+			currentSection = index;
+
+			// CSS Transform for smooth sliding
+			if (container) {
+				container.style.transform = `translateY(-${index * 100}vh)`;
+			}
+
+			updateNavbarColor(index);
+
+			// Wait for transition to finish before allowing new scroll
+			setTimeout(() => {
+				isScrolling = false;
+			}, 1000); // 1000ms matches the duration-1000 class
+		}
+
+		function updateNavbarColor(index: number) {
+			const navbar = document.getElementById("navbar");
+			if (!navbar) return;
+
+			const targetSection = sections[index];
+			const isSectionDark =
+				targetSection.getAttribute("data-theme") === "dark";
+			const isGlobalDark =
+				document.documentElement.classList.contains("dark");
+
+			if (isSectionDark || isGlobalDark) {
+				navbar.classList.remove("text-zinc-900");
+				navbar.classList.add("text-white");
+			} else {
+				navbar.classList.remove("text-white");
+				navbar.classList.add("text-zinc-900");
+			}
+		}
+
+		// Listen for global theme changes to update navbar immediately
+		const observer = new MutationObserver((mutations) => {
+			mutations.forEach((mutation) => {
+				if (mutation.attributeName === "class") {
+					updateNavbarColor(currentSection);
+				}
+			});
+		});
+
+		observer.observe(document.documentElement, { attributes: true });
+	</script>
 </Layout>
-
-<style>
-    /* Custom animations usually go here or in global css */
-    @keyframes spin-slow {
-        from { transform: rotate(0deg); }
-        to { transform: rotate(360deg); }
-    }
-    .animate-spin-slow {
-        animation: spin-slow 12s linear infinite;
-    }
-</style>

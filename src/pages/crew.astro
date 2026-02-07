@@ -65,7 +65,7 @@ const team = [
             >
                 {
                     team.map((member) => (
-                        <div class="group">
+                        <div class="group bg-white/30 backdrop-blur-md border border-white/40 shadow-xl rounded-[2.5rem] p-6 hover:bg-white/40 transition-all duration-500">
                             <div
                                 class={`aspect-[3/4] rounded-[2rem] mb-6 overflow-hidden relative ${member.bg}`}
                             >
@@ -77,8 +77,8 @@ const team = [
 
                                 <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
                             </div>
-                            <div class="text-center">
-                                <h3 class="text-3xl font-serif font-bold mb-1">
+                            <div class="text-center pb-4">
+                                <h3 class="text-3xl font-serif font-bold mb-1 col">
                                     {member.name}
                                 </h3>
                                 <p class="text-brand-orange font-bold uppercase text-xs tracking-widest mb-3">
