@@ -1,0 +1,135 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+const team = [
+    {
+        name: "Ana",
+        role: "3D Artist",
+        quote: "El volumen lo es todo.",
+        img: "https://placehold.co/400x500/png?text=Ana",
+        bg: "bg-menu-2",
+    },
+    {
+        name: "Carlos",
+        role: "Designer",
+        quote: "Todo entra por los ojos.",
+        img: "https://placehold.co/400x500/png?text=Carlos",
+        bg: "bg-menu-1",
+    },
+    {
+        name: "Luis",
+        role: "Dev",
+        quote: "Si funciona, no lo toques.",
+        img: "https://placehold.co/400x500/png?text=Luis",
+        bg: "bg-menu-3",
+    },
+    {
+        name: "Marta",
+        role: "Marketing",
+        quote: "Hagamos ruido.",
+        img: "https://placehold.co/400x500/png?text=Marta",
+        bg: "bg-menu-4",
+    },
+    {
+        name: "Pedro",
+        role: "Copywriter",
+        quote: "Palabras que venden.",
+        img: "https://placehold.co/400x500/png?text=Pedro",
+        bg: "bg-menu-5",
+    },
+    {
+        name: "Sofia",
+        role: "Strategist",
+        quote: "Planifica y vencerás.",
+        img: "https://placehold.co/400x500/png?text=Sofia",
+        bg: "bg-menu-6 text-white",
+    },
+];
+---
+
+<Layout title="Crew | Sancocho">
+    <main class="pt-32 pb-20 px-4">
+        <div class="w-[80%] mx-auto">
+            <div class="text-center mb-24">
+                <h1 class="text-6xl md:text-9xl font-serif mb-6">
+                    The <span class="italic text-brand-orange">Crew</span>
+                </h1>
+                <p class="text-xl max-w-2xl mx-auto font-light text-zinc-500">
+                    Un mix de talento multidisciplinar listo para cocinar las
+                    mejores ideas.
+                </p>
+            </div>
+
+            <div
+                class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8"
+            >
+                {
+                    team.map((member) => (
+                        <div class="group">
+                            <div
+                                class={`aspect-[3/4] rounded-[2rem] mb-6 overflow-hidden relative ${member.bg}`}
+                            >
+                                <img
+                                    src={member.img}
+                                    alt={member.name}
+                                    class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 mix-blend-multiply opacity-80 group-hover:opacity-100"
+                                />
+
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                            </div>
+                            <div class="text-center">
+                                <h3 class="text-3xl font-serif font-bold mb-1">
+                                    {member.name}
+                                </h3>
+                                <p class="text-brand-orange font-bold uppercase text-xs tracking-widest mb-3">
+                                    {member.role}
+                                </p>
+                                <p class="italic opacity-60">
+                                    "{member.quote}"
+                                </p>
+                            </div>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div
+                class="mt-32 p-12 bg-zinc-900 text-white rounded-[3rem] text-center relative overflow-hidden"
+            >
+                <div class="relative z-10">
+                    <h2 class="text-4xl md:text-5xl font-serif mb-8">
+                        ¿Quieres unirte al equipo?
+                    </h2>
+                    <a
+                        href="mailto:jobs@sancocho.studio"
+                        class="inline-block border border-white/30 px-8 py-3 rounded-full hover:bg-white hover:text-black transition-colors"
+                    >
+                        Envíanos tu portafolio
+                    </a>
+                </div>
+                <!-- Decorative doodles -->
+                <div
+                    class="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none"
+                >
+                    <svg width="100%" height="100%">
+                        <pattern
+                            id="pattern-circles"
+                            x="0"
+                            y="0"
+                            width="50"
+                            height="50"
+                            patternUnits="userSpaceOnUse"
+                        >
+                            <circle cx="2" cy="2" r="1" fill="currentColor"
+                            ></circle>
+                        </pattern>
+                        <rect
+                            width="100%"
+                            height="100%"
+                            fill="url(#pattern-circles)"></rect>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </main>
+</Layout>

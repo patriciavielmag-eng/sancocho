@@ -1,0 +1,37 @@
+---
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Servicios", href: "/servicios" },
+  { name: "Portafolio", href: "/portafolio" },
+  { name: "Crew", href: "/crew" },
+  { name: "Contacto", href: "/contacto" },
+];
+---
+
+<nav class="fixed w-full z-50 top-0 px-4 py-4">
+  <div class="w-[80%] mx-auto flex justify-between items-center">
+    <a
+      href="/"
+      class="text-2xl font-serif font-bold tracking-tighter hover:scale-105 transition-transform text-zinc-900"
+    >
+      Sancocho
+    </a>
+
+    <div
+      class="hidden md:flex gap-8 items-center bg-white/50 backdrop-blur-xl px-6 py-2 rounded-full border border-white/40 shadow-sm"
+    >
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class="text-sm font-medium text-zinc-900 hover:text-brand-orange transition-colors uppercase tracking-widest"
+          >
+            {item.name}
+          </a>
+        ))
+      }
+    </div>
+
+    <button class="md:hidden text-2xl text-zinc-900"> ☰ </button>
+  </div>
+</nav>
