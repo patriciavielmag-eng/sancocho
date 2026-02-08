@@ -7,42 +7,42 @@ const services = [
 		title: "Diseño\n& Marca",
 		bg: "bg-menu-1",
 		text: "text-zinc-900",
-		link: "/servicios#diseno",
+		link: import.meta.env.BASE_URL + "servicios#diseno",
 	},
 	{
 		id: 2,
 		title: "3D & Motion",
 		bg: "bg-menu-2",
 		text: "text-zinc-900",
-		link: "/servicios#3d",
+		link: import.meta.env.BASE_URL + "servicios#3d",
 	},
 	{
 		id: 3,
 		title: "Web Plans",
 		bg: "bg-menu-3",
 		text: "text-zinc-900",
-		link: "/servicios#web",
+		link: import.meta.env.BASE_URL + "servicios#web",
 	},
 	{
 		id: 4,
 		title: "Creación\nde Content",
 		bg: "bg-menu-4",
 		text: "text-zinc-900",
-		link: "/servicios#content",
+		link: import.meta.env.BASE_URL + "servicios#content",
 	},
 	{
 		id: 5,
 		title: "Impresión\n& Mercha",
 		bg: "bg-menu-5",
 		text: "text-zinc-900",
-		link: "/servicios#impresion",
+		link: import.meta.env.BASE_URL + "servicios#impresion",
 	},
 	{
 		id: 6,
 		title: "Marketing\n& Campañas",
 		bg: "bg-menu-6",
 		text: "text-white",
-		link: "/servicios#marketing",
+		link: import.meta.env.BASE_URL + "servicios#marketing",
 	},
 ];
 
@@ -406,7 +406,7 @@ const plans = [
 							Hablamos?
 						</h2>
 						<a
-							href="/contacto"
+							href={import.meta.env.BASE_URL + "contacto"}
 							class="inline-block px-8 py-3 bg-black text-white rounded-full font-bold text-lg hover:bg-zinc-800 transition-colors"
 						>
 							Iniciar Proyecto
