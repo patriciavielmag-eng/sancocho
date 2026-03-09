@@ -108,46 +108,56 @@ const plans = [
 		>
 			<!-- Hero Section -->
 			<section
-				class="relative h-screen w-full flex items-center justify-center overflow-hidden"
+				class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-cream dark:bg-zinc-950"
 			>
+				<!-- Background Lottie Doodle -->
+				<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex items-center justify-center scale-[2]">
+					<LottiePlayer src={import.meta.env.BASE_URL + "safari-icon.json"} speed={0.5} class="w-[800px] h-[800px] blur-2xl opacity-40 mix-blend-multiply dark:mix-blend-screen" />
+				</div>
+
 				<div
 					class="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
 				>
 				</div>
 
-				<div class="relative z-10 text-center w-[80%] mx-auto px-4">
-					<div
-						class="flex justify-center items-center gap-4 sm:gap-8 mb-6"
-					>
-						<span
-							class="text-brand-orange text-6xl animate-spin-slow"
-							>❋</span
-						>
-						<div
-							class="bg-white dark:bg-zinc-900 rounded-full p-12 shadow-sm border border-orange-100 dark:border-zinc-800 relative transition-colors duration-500"
-						>
-							<h1
-								class="font-serif text-5xl md:text-7xl leading-tight text-zinc-900 dark:text-white"
-							>
-								<span
-									class="block text-2xl md:text-3xl italic text-brand-orange mb-2 font-sans font-light"
-									>Un</span
-								>
-								Studio<br />Creativo
-								<span
-									class="block text-2xl md:text-3xl mt-2 font-sans italic lowercase"
-									>con sabor</span
-								>
+				<div class="relative z-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
+					<!-- Abstract Floating badge mapped to Safari Icon -->
+					<div class="absolute -top-16 -right-4 md:-right-10 lg:-top-20 lg:-left-16 z-20 w-32 h-32 md:w-48 md:h-48 animate-bounce" style="animation-duration: 4s;">
+						<div class="relative w-full h-full flex items-center justify-center bg-brand-orange rounded-full shadow-[0_0_40px_rgba(255,107,53,0.4)] transform rotate-12 hover:rotate-0 transition-transform duration-500 overflow-hidden">
+							<LottiePlayer src={import.meta.env.BASE_URL + "safari-icon.json"} playMode="bounce" speed={1.5} class="w-24 h-24 md:w-32 md:h-32 filter brightness-0 invert" />
+						</div>
+					</div>
+
+					<div class="text-center flex flex-col items-center space-y-2 md:space-y-0 w-full relative">
+						<!-- Row 1 -->
+						<div class="flex items-center gap-4 overflow-hidden w-full justify-center">
+							<span class="inline-block transform translate-y-[100%] opacity-0 animate-slide-up">
+								<span class="text-3xl md:text-5xl font-rinter italic text-zinc-400 dark:text-zinc-500 mr-4">Un</span>
+							</span>
+							<h1 class="text-[14vw] md:text-[10vw] font-black uppercase leading-[0.85] tracking-tighter text-zinc-900 dark:text-white inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-100">
+								Studio
 							</h1>
-							<div
-								class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full h-full rounded-full border border-dashed border-orange-200 animate-pulse"
-							>
+						</div>
+
+						<!-- Row 2 -->
+						<div class="flex items-center gap-4 md:gap-8 overflow-hidden w-full justify-center">
+							<h1 class="text-[16vw] md:text-[12vw] font-rinter font-light italic text-brand-orange leading-[0.8] tracking-tighter inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-200 md:ml-[-4vw]">
+								Creativo
+							</h1>
+							<!-- Rotating Star -->
+							<div class="w-16 h-16 md:w-28 md:h-28 text-brand-orange animate-spin-slow origin-center flex items-center justify-center shrink-0 transform translate-y-[100%] opacity-0 animate-slide-up delay-300">
+                                <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
+                                    <path d="M50 0 L58 35 L95 25 L65 50 L95 75 L58 65 L50 100 L42 65 L5 75 L35 50 L5 25 L42 35 Z" />
+                                </svg>
 							</div>
 						</div>
-						<span
-							class="text-brand-orange text-6xl animate-spin-slow duration-700"
-							>❋</span
-						>
+
+						<!-- Row 3 -->
+						<div class="flex items-center gap-4 overflow-hidden w-full justify-center mt-8">
+							<span class="text-sm md:text-xl font-sans uppercase tracking-[0.4em] font-bold text-zinc-500 dark:text-zinc-400 inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-400 border border-zinc-200 dark:border-zinc-800 py-3 px-8 rounded-full bg-white/50 dark:bg-black/20 backdrop-blur-sm">
+								Con sabor tropical
+							</span>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -161,7 +171,7 @@ const plans = [
 					<div class="flex justify-between items-center mb-8">
 						<span class="text-6xl font-black">*</span>
 						<h2
-							class="text-8xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white"
+							class="text-8xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white font-rinter"
 						>
 							El Menú
 						</h2>
@@ -221,7 +231,7 @@ const plans = [
 										</div>
 
 										<h3
-											class={`text-3xl md:text-4xl font-medium tracking-tighter whitespace-pre-line leading-none relative z-10 mt-auto`}
+											class={`text-3xl md:text-4xl font-rinter tracking-tighter whitespace-pre-line leading-none relative z-10 mt-auto`}
 										>
 											{service.title}
 										</h3>
@@ -243,9 +253,9 @@ const plans = [
 			>
 				<div class="w-[80%] mx-auto">
 					<h2
-						class="font-serif text-[15vw] leading-[0.8] text-center mb-12 uppercase tracking-tighter"
+						class="font-rinter text-[15vw] leading-[0.8] text-center mb-12 uppercase tracking-tighter"
 					>
-						Port<span class="italic font-sans font-light">a</span
+						Port<span class="italic font-rinter font-light">a</span
 						>folio
 					</h2>
 
@@ -320,9 +330,9 @@ const plans = [
 			<section class="h-screen w-full flex flex-col justify-center px-4">
 				<div class="w-[80%] mx-auto">
 					<h2
-						class="text-6xl md:text-8xl font-sans font-light mb-16 text-center tracking-tighter text-zinc-900 dark:text-white"
+						class="text-6xl md:text-8xl font-rinter font-light mb-16 text-center tracking-tighter text-zinc-900 dark:text-white"
 					>
-						El <span class="font-serif italic font-bold">Mix</span> Team
+						El <span class="font-rinter italic font-bold">Mix</span> Team
 					</h2>
 
 					<div
@@ -344,7 +354,7 @@ const plans = [
 										<p class="font-serif italic text-lg mb-2 text-zinc-900 dark:text-gray-100">
 											"{member.quote}"
 										</p>
-										<h3 class="font-bold uppercase text-sm tracking-wide text-zinc-900 dark:text-gray-100">
+										<h3 class="font-rinter uppercase text-sm tracking-wide text-zinc-900 dark:text-gray-100">
 											{member.name}
 										</h3>
 										<span class="text-xs text-zinc-500 dark:text-zinc-400">
@@ -369,7 +379,7 @@ const plans = [
 							>Suscripciones</span
 						>
 						<h2
-							class="text-5xl md:text-7xl font-serif text-zinc-900 leading-none"
+							class="text-5xl md:text-7xl font-rinter text-zinc-900 leading-none"
 						>
 							Planes<br />Mensuales
 						</h2>
@@ -431,7 +441,7 @@ const plans = [
 								stroke-width="2"></path>
 						</svg>
 						<h2
-							class="text-[12vw] font-sans font-bold leading-none tracking-tighter mb-4"
+							class="text-[12vw] font-rinter leading-none tracking-tighter mb-4"
 						>
 							Hablamos?
 						</h2>
@@ -447,7 +457,7 @@ const plans = [
 						class="grid grid-cols-2 md:grid-cols-4 gap-8 text-left text-sm font-medium border-t border-black/10 pt-12"
 					>
 						<div>
-							<h4 class="mb-4 opacity-50">Social</h4>
+							<h4 class="mb-4 opacity-50 font-rinter">Social</h4>
 							<ul class="space-y-2">
 								<li>
 									<a href="#" class="hover:underline"
@@ -467,7 +477,7 @@ const plans = [
 							</ul>
 						</div>
 						<div>
-							<h4 class="mb-4 opacity-50">Contacto</h4>
+							<h4 class="mb-4 opacity-50 font-rinter">Contacto</h4>
 							<ul class="space-y-2">
 								<li>
 									<a href="mailto:hola@sancocho.studio" class="hover:underline">hola@sancocho.studio</a>
@@ -478,7 +488,7 @@ const plans = [
 							</ul>
 						</div>
 						<div>
-							<h4 class="mb-4 opacity-50">Legal</h4>
+							<h4 class="mb-4 opacity-50 font-rinter">Legal</h4>
 							<ul class="space-y-2">
 								<li>Privacidad</li>
 								<li>Términos</li>

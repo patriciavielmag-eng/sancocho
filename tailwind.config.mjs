@@ -17,6 +17,8 @@ export default {
             fontFamily: {
                 serif: ['"Playfair Display"', 'serif'],
                 sans: ['"Space Grotesk"', 'sans-serif'],
+                linear: ['"Linear Grotesk"', 'sans-serif'],
+                rinter: ['"Rinter"', 'sans-serif'],
             }
         },
     },
