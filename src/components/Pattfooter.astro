@@ -14,6 +14,7 @@ const socials = [
   { name: "Twitter", href: "https://twitter.com" },
   { name: "Dribbble", href: "https://dribbble.com" },
   { name: "Behance", href: "https://behance.net" },
+  { name: "WhatsApp", href: "https://wa.me/34633757804" }
 ];
 ---
 
@@ -84,9 +85,13 @@ const socials = [
       <div class="md:col-span-1">
         <a
           href={import.meta.env.BASE_URL}
-          class="text-4xl font-serif font-bold tracking-tighter mb-8 block hover:text-brand-orange transition-colors"
+          class="block mb-8 hover:opacity-80 transition-opacity w-48"
         >
-          Sancocho
+          <img
+            src={import.meta.env.BASE_URL + "logotipo-sancocho-modo-oscuro.svg"}
+            alt="Sancocho Logo"
+            class="w-full h-auto object-contain"
+          />
         </a>
         <p class="text-zinc-500 max-w-xs leading-relaxed font-sans font-light">
           Especializados en branding, web, 3D y estrategias digitales que dejan
@@ -159,6 +164,19 @@ const socials = [
               href="mailto:hola@sancocho.studio"
               class="text-lg hover:text-brand-orange transition-colors"
               >hola@sancocho.studio</a
+            >
+          </div>
+          <div>
+            <span
+              class="block text-zinc-600 text-xs mb-1 uppercase tracking-wider"
+              >WhatsApp</span
+            >
+            <a
+              href="https://wa.me/+34633757804"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="text-lg hover:text-brand-orange transition-colors"
+              >+34 633 75 78 04</a
             >
           </div>
           <div>

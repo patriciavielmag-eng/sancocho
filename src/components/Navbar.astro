@@ -15,9 +15,18 @@ const navItems = [
   <div class="w-[80%] mx-auto flex justify-between items-center relative">
     <a
       href={import.meta.env.BASE_URL}
-      class="text-2xl font-serif font-bold tracking-tighter hover:scale-105 transition-transform text-current"
+      class="hover:scale-105 transition-transform flex items-center h-8"
     >
-      Sancocho
+      <img
+        src={import.meta.env.BASE_URL + "logotipo-sancocho.svg"}
+        alt="Sancocho Logo"
+        class="h-full w-auto object-contain logo-light"
+      />
+      <img
+        src={import.meta.env.BASE_URL + "logotipo-sancocho-modo-oscuro.svg"}
+        alt="Sancocho Logo Oscuro"
+        class="h-full w-auto object-contain logo-dark"
+      />
     </a>
 
     <div
@@ -112,3 +121,18 @@ const navItems = [
     }
   });
 </script>
+
+<style>
+  .logo-light { display: block; }
+  .logo-dark { display: none; }
+  
+  :global(html.dark) .logo-light { display: none; }
+  :global(html.dark) .logo-dark { display: block; }
+
+  /* Specific overrides for when navbar text color is forced, e.g. when scrolling over different sections */
+  :global(#navbar.text-white) .logo-light { display: none !important; }
+  :global(#navbar.text-white) .logo-dark { display: block !important; }
+  
+  :global(#navbar.text-zinc-900) .logo-light { display: block !important; }
+  :global(#navbar.text-zinc-900) .logo-dark { display: none !important; }
+</style>
