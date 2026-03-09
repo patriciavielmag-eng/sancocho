@@ -1,5 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import LottiePlayer from "../components/LottiePlayer.astro";
+import Spline from "@splinetool/react-spline";
 
 const services = [
 	{
@@ -166,41 +168,69 @@ const plans = [
 						<span class="text-6xl font-black">*</span>
 					</div>
 
-					<div class="space-y-3">
+					<div
+						class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full max-h-[70vh]"
+					>
 						{
-							services.map((service, index) => (
-								<a
-									href={service.link}
-									class={`group flex flex-col justify-center h-40 px-8 rounded-2xl transition-all duration-300 hover:-translate-y-2 hover:shadow-xl ${service.bg} ${service.text} relative overflow-hidden border border-black/5 dark:border-white/10`}
-								>
-									<div class="flex items-center justify-between w-full">
-										<div class="flex items-center gap-6">
-											<span class="flex items-center justify-center w-8 h-8 rounded-full border border-current text-sm font-bold opacity-60">
-												{service.id}
+							services.map((service, index) => {
+								let gridClasses =
+									"group flex flex-col justify-between p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden border border-black/5 dark:border-white/10 ";
+
+								// Masonry logic
+								if (index === 0)
+									gridClasses +=
+										"md:col-span-2 md:row-span-1";
+								// Wide
+								else if (index === 1)
+									gridClasses +=
+										"md:col-span-1 md:row-span-2";
+								// Tall
+								else if (index === 5)
+									gridClasses +=
+										"md:col-span-2 md:row-span-1";
+								// Wide bottom
+								else
+									gridClasses +=
+										"md:col-span-1 md:row-span-1"; // Normal
+
+								return (
+									<a
+										href={service.link}
+										class={`${gridClasses} ${service.bg} ${service.text}`}
+									>
+										<div class="flex items-center justify-between w-full relative z-10">
+											<span class="flex items-center justify-center w-8 h-8 rounded-full border border-current text-xs font-bold opacity-40 group-hover:opacity-100 transition-opacity">
+												0{service.id}
 											</span>
-											<h3 class="text-3xl md:text-4xl font-medium tracking-tight whitespace-pre-line leading-none">
-												{service.title}
-											</h3>
+											<div class="transform group-hover:rotate-[-45deg] transition-transform duration-300">
+												<svg
+													xmlns="http://www.w3.org/2000/svg"
+													class="h-6 w-6"
+													fill="none"
+													viewBox="0 0 24 24"
+													stroke="currentColor"
+												>
+													<path
+														stroke-linecap="round"
+														stroke-linejoin="round"
+														stroke-width="2"
+														d="M17 8l4 4m0 0l-4 4m4-4H3"
+													/>
+												</svg>
+											</div>
 										</div>
-										<div class="transform group-hover:translate-x-2 transition-transform">
-											<svg
-												xmlns="http://www.w3.org/2000/svg"
-												class="h-10 w-10"
-												fill="none"
-												viewBox="0 0 24 24"
-												stroke="currentColor"
-											>
-												<path
-													stroke-linecap="round"
-													stroke-linejoin="round"
-													stroke-width="2"
-													d="M13 7l5 5m0 0l-5 5m5-5H6"
-												/>
-											</svg>
-										</div>
-									</div>
-								</a>
-							))
+
+										<h3
+											class={`text-3xl md:text-4xl font-medium tracking-tighter whitespace-pre-line leading-none relative z-10 mt-auto`}
+										>
+											{service.title}
+										</h3>
+
+										{/* Decorative flavor blob */}
+										<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-current opacity-[0.03] rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
+									</a>
+								);
+							})
 						}
 					</div>
 				</div>

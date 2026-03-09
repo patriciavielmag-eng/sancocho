@@ -1,0 +1,43 @@
+---
+/**
+ * Lottie Player Component
+ * Uses @dotlottie/player-component to render .lottie or .json animations.
+ * Works seamlessly in Astro without needing React/Vue.
+ */
+interface Props {
+    src: string; // URL or path inside public/ (e.g., "/anim.lottie")
+    autoplay?: boolean;
+    loop?: boolean;
+    class?: string; // For custom Tailwind or CSS classes
+    playMode?: "normal" | "bounce";
+    speed?: number;
+}
+
+const {
+    src,
+    autoplay = true,
+    loop = true,
+    class: className,
+    playMode = "normal",
+    speed = 1,
+} = Astro.props;
+---
+
+<div class={className}>
+    <dotlottie-player
+        src={src}
+        background="transparent"
+        speed={speed.toString()}
+        style="width: 100%; height: 100%;"
+        direction="1"
+        playMode={playMode}
+        loop={loop ? "true" : undefined}
+        autoplay={autoplay ? "true" : undefined}
+    >
+    </dotlottie-player>
+</div>
+
+{/* The script must be inside the component files to be loaded automatically */}
+<script>
+    import "@dotlottie/player-component";
+</script>

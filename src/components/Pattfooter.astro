@@ -1,0 +1,240 @@
+---
+const currentYear = new Date().getFullYear();
+
+const links = [
+  { name: "Home", href: import.meta.env.BASE_URL },
+  { name: "Servicios", href: import.meta.env.BASE_URL + "servicios/" },
+  { name: "Portafolio", href: import.meta.env.BASE_URL + "portafolio/" },
+  { name: "Crew", href: import.meta.env.BASE_URL + "crew/" },
+  { name: "Contacto", href: import.meta.env.BASE_URL + "contacto/" },
+];
+
+const socials = [
+  { name: "Instagram", href: "https://instagram.com" },
+  { name: "Twitter", href: "https://twitter.com" },
+  { name: "Dribbble", href: "https://dribbble.com" },
+  { name: "Behance", href: "https://behance.net" },
+];
+---
+
+<footer
+  class="bg-zinc-950 text-white pt-24 pb-12 overflow-hidden relative border-t border-white/5 font-sans"
+>
+  <!-- Decorative background element -->
+  <div
+    class="absolute top-0 right-0 w-96 h-96 bg-brand-orange/10 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/4 pointer-events-none"
+  >
+  </div>
+
+  <div class="max-w-[80%] mx-auto relative z-10">
+    <!-- Top Part: Big CTA -->
+    <div
+      class="flex flex-col md:flex-row justify-between items-start md:items-end gap-12 mb-24"
+    >
+      <div class="max-w-2xl">
+        <span
+          class="text-brand-orange font-sans uppercase tracking-[0.3em] text-xs font-bold mb-6 block"
+          >¿Tienes una idea en mente?</span
+        >
+        <h2 class="text-6xl md:text-8xl font-serif leading-none tracking-tight">
+          Cocinemos algo <span class="italic text-brand-orange">increíble</span> juntos.
+        </h2>
+      </div>
+
+      <a
+        href={import.meta.env.BASE_URL + "contacto/"}
+        class="group relative inline-flex items-center justify-center px-10 py-5 overflow-hidden font-bold rounded-full transition-all duration-300 bg-white text-zinc-950 hover:bg-brand-orange hover:text-white"
+      >
+        <span class="relative z-10 text-lg uppercase tracking-widest"
+          >Iniciar Proyecto</span
+        >
+        <div
+          class="absolute inset-0 bg-brand-orange transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out"
+        >
+        </div>
+      </a>
+    </div>
+
+    <!-- Scrolling Ticker -->
+    <div
+      class="w-full border-y border-white/10 py-6 mb-24 overflow-hidden mask-horizontal"
+    >
+      <div class="flex whitespace-nowrap animate-marquee">
+        {
+          Array(10)
+            .fill(0)
+            .map(() => (
+              <div class="flex items-center gap-8 mx-4">
+                <span class="text-2xl font-serif italic text-white/40 uppercase tracking-widest">
+                  Sancocho Studio
+                </span>
+                <span class="text-brand-orange text-2xl">❋</span>
+                <span class="text-2xl font-sans font-light text-white/40 uppercase tracking-widest">
+                  Creatividad con Sabor
+                </span>
+                <span class="text-brand-orange text-2xl">❋</span>
+              </div>
+            ))
+        }
+      </div>
+    </div>
+
+    <!-- Main Footer Links -->
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-16 mb-24">
+      <div class="md:col-span-1">
+        <a
+          href={import.meta.env.BASE_URL}
+          class="text-4xl font-serif font-bold tracking-tighter mb-8 block hover:text-brand-orange transition-colors"
+        >
+          Sancocho
+        </a>
+        <p class="text-zinc-500 max-w-xs leading-relaxed font-sans font-light">
+          Especializados en branding, web, 3D y estrategias digitales que dejan
+          buen sabor de boca. Desde el trópico para el mundo digital.
+        </p>
+      </div>
+
+      <div>
+        <h4
+          class="text-brand-orange uppercase tracking-widest text-xs font-bold mb-8"
+        >
+          Navegación
+        </h4>
+        <ul class="space-y-4">
+          {
+            links.map((link) => (
+              <li>
+                <a
+                  href={link.href}
+                  class="text-zinc-400 hover:text-white transition-colors text-lg font-sans underline-offset-8 decoration-brand-orange/30 hover:underline"
+                >
+                  {link.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h4
+          class="text-brand-orange uppercase tracking-widest text-xs font-bold mb-8"
+        >
+          Social
+        </h4>
+        <ul class="space-y-4">
+          {
+            socials.map((social) => (
+              <li>
+                <a
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="text-zinc-400 hover:text-white transition-colors text-lg font-sans flex items-center group"
+                >
+                  <span class="mr-3 transform group-hover:translate-x-1 transition-transform">
+                    →
+                  </span>
+                  {social.name}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <div>
+        <h4
+          class="text-brand-orange uppercase tracking-widest text-xs font-bold mb-8"
+        >
+          Contacto
+        </h4>
+        <div class="space-y-6">
+          <div>
+            <span
+              class="block text-zinc-600 text-xs mb-1 uppercase tracking-wider"
+              >Escríbenos</span
+            >
+            <a
+              href="mailto:hola@sancocho.studio"
+              class="text-lg hover:text-brand-orange transition-colors"
+              >hola@sancocho.studio</a
+            >
+          </div>
+          <div>
+            <span
+              class="block text-zinc-600 text-xs mb-1 uppercase tracking-wider"
+              >Donde estamos</span
+            >
+            <p class="text-zinc-400 font-light">
+              Calle Imaginaria 123,<br />Las Palmas de G.C., España
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div
+      class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-zinc-500 text-sm font-sans uppercase tracking-[0.2em]"
+    >
+      <div class="flex items-center gap-2">
+        <span>© {currentYear} Sancocho Studio</span>
+        <span class="text-brand-orange">•</span>
+        <span>Todos los derechos reservados</span>
+      </div>
+      <div class="flex items-center gap-6">
+        <a href="#" class="hover:text-white transition-colors text-[10px]"
+          >Privacidad</a
+        >
+        <a href="#" class="hover:text-white transition-colors text-[10px]"
+          >Legal</a
+        >
+        <div
+          class="flex items-center gap-2 bg-zinc-900 px-4 py-2 rounded-full text-[10px] text-zinc-400 border border-white/5"
+        >
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          OPEN FOR NEW PROJECTS
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .animate-marquee {
+    display: flex;
+    animation: marquee 40s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .mask-horizontal {
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+  }
+
+  /* Smooth scroll for anchor links if they are on the same page */
+  footer a[href^="#"] {
+    scroll-behavior: smooth;
+  }
+</style>
