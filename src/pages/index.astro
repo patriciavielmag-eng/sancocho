@@ -116,7 +116,7 @@ const plans = [
 				</div>
 				<!-- Background Lottie Doodle -->
 				<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex items-center justify-center scale-[2]">
-					<LottiePlayer src={import.meta.env.BASE_URL + "safari-icon.json"} speed={0.5} class="w-[800px] h-[800px] blur-2xl opacity-40 mix-blend-multiply dark:mix-blend-screen" />
+					<div class="text-9xl text-brand-orange animate-pulse">✱</div>
 				</div>
 
 				<div
@@ -422,6 +422,7 @@ const plans = [
 
 			<!-- Footer (as a section) -->
 			<section
+				data-theme="light"
 				class="h-screen w-full flex flex-col justify-center bg-brand-orange text-zinc-900 relative z-10"
 			>
 				<div
@@ -581,10 +582,12 @@ const plans = [
 			const targetSection = sections[index];
 			const isSectionDark =
 				targetSection.getAttribute("data-theme") === "dark";
+			const isSectionLight =
+				targetSection.getAttribute("data-theme") === "light";
 			const isGlobalDark =
 				document.documentElement.classList.contains("dark");
 
-			if (isSectionDark || isGlobalDark) {
+			if (isSectionDark || (!isSectionLight && isGlobalDark)) {
 				navbar.classList.remove("text-zinc-900");
 				navbar.classList.add("text-white");
 			} else {
