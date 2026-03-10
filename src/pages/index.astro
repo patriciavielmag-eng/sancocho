@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import LottiePlayer from "../components/LottiePlayer.astro";
 import Spline from "@splinetool/react-spline";
+import HeroAnimado from '../components/HeroAnimado.jsx';
 
 const services = [
 	{
@@ -36,7 +37,7 @@ const services = [
 		id: 5,
 		title: "Impresión\n& Mercha",
 		bg: "bg-menu-5",
-		text: "text-zinc-900",
+		text: "text-white",
 		link: import.meta.env.BASE_URL + "servicios/#impresion",
 	},
 	{
@@ -110,6 +111,9 @@ const plans = [
 			<section
 				class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-cream dark:bg-zinc-950"
 			>
+				<div class="absolute top-32 z-50 w-full hidden">
+					<HeroAnimado client:load />
+				</div>
 				<!-- Background Lottie Doodle -->
 				<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex items-center justify-center scale-[2]">
 					<LottiePlayer src={import.meta.env.BASE_URL + "safari-icon.json"} speed={0.5} class="w-[800px] h-[800px] blur-2xl opacity-40 mix-blend-multiply dark:mix-blend-screen" />

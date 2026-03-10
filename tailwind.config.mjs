@@ -5,14 +5,16 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-cream': '#F8F5F2',
-                'brand-orange': '#FF6B35',
-                'menu-1': '#F2ECE4',
-                'menu-2': '#FFE4D9',
-                'menu-3': '#C6F6B6',
-                'menu-4': '#BFA6FF',
-                'menu-5': '#FF7F50',
-                'menu-6': '#1A1A1A',
+                'brand-cream': '#F2F4EB',    // Gray sand
+                'brand-orange': '#FF7640',   // Orange
+                'brand-green': '#074C41',    // Deep water Green
+                'brand-black': '#161616',    // Pale Black
+                'menu-1': '#FFE1D9',         // Peach sand
+                'menu-2': '#B6A5FF',         // Purple moody
+                'menu-3': '#FFA7E5',         // Pink
+                'menu-4': '#C6F6B6',         // Verde Apple
+                'menu-5': '#074C41',         // Deep water Green
+                'menu-6': '#161616',         // Pale Black
             },
             fontFamily: {
                 serif: ['"Playfair Display"', 'serif'],
