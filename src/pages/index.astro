@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import LottiePlayer from "../components/LottiePlayer.astro";
 import Spline from "@splinetool/react-spline";
-import HeroAnimado from '../components/HeroAnimado.jsx';
+import HeroAnimado from "../components/HeroAnimado.jsx";
 
 const services = [
 	{
@@ -101,7 +101,7 @@ const plans = [
 
 <Layout title="Sancocho | Studio Creativo">
 	<main
-		class="h-screen w-full overflow-hidden relative dark:bg-zinc-950 dark:text-gray-100"
+		class="h-screen w-full overflow-hidden relative bg-brand-cream text-brand-black"
 	>
 		<div
 			id="scroll-container"
@@ -109,60 +109,91 @@ const plans = [
 		>
 			<!-- Hero Section -->
 			<section
-				class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-cream dark:bg-zinc-950"
+				class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-brand-cream"
 			>
-				<div class="absolute top-32 z-50 w-full hidden">
-					<HeroAnimado client:load />
-				</div>
-				<!-- Background Lottie Doodle -->
-				<div class="absolute inset-0 z-0 opacity-20 pointer-events-none flex items-center justify-center scale-[2]">
-					<div class="text-9xl text-brand-orange animate-pulse">✱</div>
-				</div>
-
+				<!-- 8-point stars (snowflake style) -->
 				<div
-					class="absolute inset-0 z-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')]"
+					class="absolute top-20 left-10 md:top-32 md:left-20 text-brand-orange animate-pulse"
 				>
+					<svg
+						width="80"
+						height="80"
+						viewBox="0 0 100 100"
+						class="fill-current"
+					>
+						<path
+							d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+						></path>
+					</svg>
+				</div>
+				<div
+					class="absolute bottom-20 right-10 md:bottom-32 md:right-20 text-brand-orange animate-pulse"
+				>
+					<svg
+						width="80"
+						height="80"
+						viewBox="0 0 100 100"
+						class="fill-current"
+					>
+						<path
+							d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+						></path>
+					</svg>
 				</div>
 
-				<div class="relative z-10 w-[90%] md:w-[80%] mx-auto flex flex-col items-center justify-center">
-					<!-- Abstract Floating badge mapped to Safari Icon -->
-					<div class="absolute -top-16 -right-4 md:-right-10 lg:-top-20 lg:-left-16 z-20 w-32 h-32 md:w-48 md:h-48 animate-bounce" style="animation-duration: 4s;">
-						<div class="relative w-full h-full flex items-center justify-center bg-brand-orange rounded-full shadow-[0_0_40px_rgba(255,107,53,0.4)] transform rotate-12 hover:rotate-0 transition-transform duration-500 overflow-hidden">
-							<LottiePlayer src={import.meta.env.BASE_URL + "safari-icon.json"} playMode="bounce" speed={1.5} class="w-24 h-24 md:w-32 md:h-32 filter brightness-0 invert" />
+				<div class="relative z-10 flex flex-col items-center">
+					<div
+						class="text-center font-display leading-[0.8] tracking-tighter"
+					>
+						<div
+							class="text-[18vw] md:text-[14vw] flex items-center justify-center"
+						>
+							<span class="mr-[-2vw]">-Studio</span>
 						</div>
-					</div>
-
-					<div class="text-center flex flex-col items-center space-y-2 md:space-y-0 w-full relative">
-						<!-- Row 1 -->
-						<div class="flex items-center gap-4 overflow-hidden w-full justify-center">
-							<span class="inline-block transform translate-y-[100%] opacity-0 animate-slide-up">
-								<span class="text-3xl md:text-5xl font-rinter italic text-zinc-400 dark:text-zinc-500 mr-4">Un</span>
-							</span>
-							<h1 class="text-[14vw] md:text-[10vw] font-black uppercase leading-[0.85] tracking-tighter text-zinc-900 dark:text-white inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-100">
-								Studio
-							</h1>
-						</div>
-
-						<!-- Row 2 -->
-						<div class="flex items-center gap-4 md:gap-8 overflow-hidden w-full justify-center">
-							<h1 class="text-[16vw] md:text-[12vw] font-rinter font-light italic text-brand-orange leading-[0.8] tracking-tighter inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-200 md:ml-[-4vw]">
-								Creativo
-							</h1>
-							<!-- Rotating Star -->
-							<div class="w-16 h-16 md:w-28 md:h-28 text-brand-orange animate-spin-slow origin-center flex items-center justify-center shrink-0 transform translate-y-[100%] opacity-0 animate-slide-up delay-300">
-                                <svg viewBox="0 0 100 100" class="w-full h-full fill-current">
-                                    <path d="M50 0 L58 35 L95 25 L65 50 L95 75 L58 65 L50 100 L42 65 L5 75 L35 50 L5 25 L42 35 Z" />
-                                </svg>
+						<div
+							class="text-[22vw] md:text-[18vw] flex items-center justify-center -mt-[2vw] relative"
+						>
+							<span>Cre</span>
+							<!-- Placeholder for Yolk -->
+							<div
+								class="mx-[1vw] w-[14vw] h-[14vw] bg-brand-orange rounded-full flex items-center justify-center overflow-hidden relative"
+							>
+								<div
+									class="absolute inset-0 bg-gradient-to-tr from-brand-orange to-yellow-300 opacity-80"
+								>
+								</div>
+								<div
+									class="w-[60%] h-[60%] bg-white rounded-full opacity-40 blur-sm"
+								>
+								</div>
 							</div>
-						</div>
-
-						<!-- Row 3 -->
-						<div class="flex items-center gap-4 overflow-hidden w-full justify-center mt-8">
-							<span class="text-sm md:text-xl font-sans uppercase tracking-[0.4em] font-bold text-zinc-500 dark:text-zinc-400 inline-block transform translate-y-[100%] opacity-0 animate-slide-up delay-400 border border-zinc-200 dark:border-zinc-800 py-3 px-8 rounded-full bg-white/50 dark:bg-black/20 backdrop-blur-sm">
-								Con sabor tropical
-							</span>
+							<span>tivo</span>
 						</div>
 					</div>
+
+					<div class="mt-8 text-center">
+						<p
+							class="text-[3vw] md:text-[1.5vw] font-inter uppercase tracking-[0.3em] text-brand-black"
+						>
+							con mucho
+						</p>
+						<h2
+							class="text-[12vw] md:text-[8vw] font-display -mt-[2vw]"
+						>
+							sabor
+						</h2>
+					</div>
+				</div>
+
+				<!-- Navigation circles context (from image) -->
+				<div
+					class="absolute right-10 top-1/2 -translate-y-1/2 flex flex-col gap-4 opacity-30"
+				>
+					<div class="w-3 h-3 rounded-full border border-brand-black">
+					</div>
+					<div class="w-3 h-3 rounded-full border border-brand-black">
+					</div>
+					<div class="w-3 h-3 rounded-full bg-brand-black"></div>
 				</div>
 			</section>
 
@@ -172,15 +203,43 @@ const plans = [
 				id="menu"
 			>
 				<div class="w-[80%] mx-auto">
-					<div class="flex justify-between items-center mb-8">
-						<span class="text-6xl font-black">*</span>
+					<div class="flex justify-center items-center mb-12 gap-8">
+						<span class="text-4xl text-brand-black">
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 100 100"
+								class="fill-current"
+							>
+								<path
+									d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+								></path>
+							</svg>
+						</span>
 						<h2
-							class="text-8xl font-black uppercase tracking-tighter text-zinc-900 dark:text-white font-rinter"
+							class="text-8xl md:text-9xl font-display uppercase tracking-tighter text-brand-black"
 						>
-							El Menú
+							EL MENÚ
 						</h2>
-						<span class="text-6xl font-black">*</span>
+						<span class="text-4xl text-brand-black">
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 100 100"
+								class="fill-current"
+							>
+								<path
+									d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+								></path>
+							</svg>
+						</span>
 					</div>
+					<p
+						class="text-center font-mono text-sm mb-12 uppercase tracking-widest text-brand-black opacity-60"
+					>
+						Servicios creativos adaptados al nuevo<br />mercado.
+						Escoge tu combo!
+					</p>
 
 					<div
 						class="grid grid-cols-1 md:grid-cols-3 gap-4 h-full max-h-[70vh]"
@@ -188,24 +247,7 @@ const plans = [
 						{
 							services.map((service, index) => {
 								let gridClasses =
-									"group flex flex-col justify-between p-8 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl relative overflow-hidden border border-black/5 dark:border-white/10 ";
-
-								// Masonry logic
-								if (index === 0)
-									gridClasses +=
-										"md:col-span-2 md:row-span-1";
-								// Wide
-								else if (index === 1)
-									gridClasses +=
-										"md:col-span-1 md:row-span-2";
-								// Tall
-								else if (index === 5)
-									gridClasses +=
-										"md:col-span-2 md:row-span-1";
-								// Wide bottom
-								else
-									gridClasses +=
-										"md:col-span-1 md:row-span-1"; // Normal
+									"group flex flex-col justify-between p-10 rounded-4xl transition-all duration-500 hover:scale-[1.02] relative overflow-hidden ";
 
 								return (
 									<a
@@ -213,13 +255,13 @@ const plans = [
 										class={`${gridClasses} ${service.bg} ${service.text}`}
 									>
 										<div class="flex items-center justify-between w-full relative z-10">
-											<span class="flex items-center justify-center w-8 h-8 rounded-full border border-current text-xs font-bold opacity-40 group-hover:opacity-100 transition-opacity">
-												0{service.id}
+											<span class="flex items-center justify-center w-10 h-10 rounded-full bg-brand-black text-white text-sm font-bold">
+												{service.id}
 											</span>
-											<div class="transform group-hover:rotate-[-45deg] transition-transform duration-300">
+											<div class="transform group-hover:translate-x-2 transition-transform duration-300">
 												<svg
 													xmlns="http://www.w3.org/2000/svg"
-													class="h-6 w-6"
+													class="h-8 w-8"
 													fill="none"
 													viewBox="0 0 24 24"
 													stroke="currentColor"
@@ -227,7 +269,7 @@ const plans = [
 													<path
 														stroke-linecap="round"
 														stroke-linejoin="round"
-														stroke-width="2"
+														stroke-width="1.5"
 														d="M17 8l4 4m0 0l-4 4m4-4H3"
 													/>
 												</svg>
@@ -235,13 +277,10 @@ const plans = [
 										</div>
 
 										<h3
-											class={`text-3xl md:text-4xl font-rinter tracking-tighter whitespace-pre-line leading-none relative z-10 mt-auto`}
+											class={`text-4xl md:text-5xl font-display tracking-tighter whitespace-pre-line leading-none relative z-10 mt-auto`}
 										>
 											{service.title}
 										</h3>
-
-										{/* Decorative flavor blob */}
-										<div class="absolute -right-8 -bottom-8 w-32 h-32 bg-current opacity-[0.03] rounded-full blur-3xl group-hover:scale-150 transition-transform duration-700" />
 									</a>
 								);
 							})
@@ -253,78 +292,131 @@ const plans = [
 			<!-- Portfolio Section -->
 			<section
 				data-theme="dark"
-				class="h-screen w-full flex flex-col justify-center bg-zinc-900 text-white px-4 overflow-hidden"
+				class="min-h-screen w-full flex flex-col justify-center bg-brand-black text-white px-4 py-24 overflow-hidden"
 			>
-				<div class="w-[80%] mx-auto">
+				<div class="w-[90%] md:w-[80%] mx-auto">
 					<h2
-						class="font-rinter text-[15vw] leading-[0.8] text-center mb-12 uppercase tracking-tighter"
+						class="font-display text-[15vw] leading-[0.8] text-center mb-6 uppercase tracking-tighter"
 					>
-						Port<span class="italic font-rinter font-light">a</span
-						>folio
+						PORTAFOLIO
 					</h2>
 
 					<p
-						class="text-center font-mono text-sm mb-12 max-w-md mx-auto"
+						class="text-center font-sans text-sm md:text-base mb-8 max-w-md mx-auto opacity-80"
 					>
 						Cultivando ideas frescas desde el trópico para el mundo
 						digital.
 					</p>
 
+					<div class="flex justify-center mb-16">
+						<a
+							href={import.meta.env.BASE_URL + "contacto/"}
+							class="inline-block border border-white text-white rounded-full px-8 py-3 text-sm font-sans tracking-wide hover:bg-white hover:text-brand-black transition-colors"
+						>
+							Contacto
+						</a>
+					</div>
+
 					<div
-						class="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-[300px]"
+						class="grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-[400px]"
 					>
+						{/* Card 1: Branding */}
 						<div
-							class="md:col-span-5 row-span-2 bg-brand-orange rounded-3xl p-6 relative group overflow-hidden"
+							class="bg-menu-1 rounded-4xl p-6 relative group overflow-hidden flex items-center justify-center"
 						>
 							<div
-								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
-								style="background-image: url('https://placehold.co/600x800/orange/white?text=Branding');"
+								class="w-[80%] h-[70%] bg-white rounded-2xl p-6 shadow-sm relative group-hover:scale-105 transition-transform duration-500 mb-8 border border-black/5"
 							>
+								<div class="flex gap-2 mb-6">
+									<div
+										class="h-6 w-1/3 bg-blue-600 rounded-md"
+									>
+									</div>
+									<div
+										class="h-6 w-1/4 bg-brand-orange rounded-md"
+									>
+									</div>
+									<div
+										class="h-6 w-1/4 bg-brand-black rounded-md"
+									>
+									</div>
+								</div>
+								<h3
+									class="font-display text-5xl text-blue-600 leading-none mb-3"
+								>
+									Font
+								</h3>
+								<p
+									class="text-xs font-sans font-bold uppercase text-brand-black tracking-widest"
+								>
+									Brand Guidelines
+								</p>
+								<div
+									class="absolute bottom-12 right-6 rotate-12 text-7xl font-display text-menu-5 opacity-60"
+								>
+									a
+								</div>
+								<div
+									class="absolute bottom-6 left-6 h-6 w-2/3 bg-menu-2 rounded-md"
+								>
+								</div>
 							</div>
-							<div class="absolute bottom-6 left-6">
+							<div
+								class="absolute bottom-6 inset-x-0 mx-auto flex justify-center w-full"
+							>
 								<span
-									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
+									class="bg-white text-brand-black px-8 py-3 rounded-[32px] text-sm font-sans font-bold shadow-sm"
 									>Branding</span
 								>
 							</div>
 						</div>
+
+						{/* Card 2: Web */}
 						<div
-							class="md:col-span-7 row-span-1 bg-menu-4 rounded-3xl p-6 relative group overflow-hidden"
+							class="bg-menu-3 rounded-4xl p-6 relative group overflow-hidden"
 						>
 							<div
-								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
-								style="background-image: url('https://placehold.co/800x400/purple/white?text=Web+Design');"
+								class="absolute inset-0 group-hover:scale-110 transition-transform duration-500"
 							>
+								<div
+									class="absolute top-1/4 left-1/4 w-32 h-32 bg-blue-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse"
+								>
+								</div>
+								<div
+									class="absolute top-1/3 right-1/4 w-40 h-40 bg-purple-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse delay-75"
+								>
+								</div>
+								<div
+									class="absolute bottom-1/4 left-1/3 w-36 h-36 bg-pink-400 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-pulse delay-150"
+								>
+								</div>
 							</div>
-							<div class="absolute bottom-6 left-6">
+							<div
+								class="absolute bottom-6 inset-x-0 mx-auto flex justify-center w-full"
+							>
 								<span
-									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
-									>Web Design</span
+									class="bg-white text-brand-black px-8 py-3 rounded-[32px] text-sm font-sans font-bold shadow-sm"
+									>Web</span
 								>
 							</div>
 						</div>
+
+						{/* Card 3: Impresión */}
 						<div
-							class="md:col-span-3 row-span-1 bg-menu-3 rounded-3xl p-6 relative group overflow-hidden"
+							class="bg-brand-orange rounded-4xl p-6 relative group overflow-hidden"
 						>
 							<div
-								class="absolute inset-0 bg-cover bg-center transition-transform group-hover:scale-110"
-								style="background-image: url('https://placehold.co/400x400/green/black?text=3D');"
+								class="absolute inset-0 bg-brand-orange transition-transform group-hover:scale-110"
 							>
 							</div>
-							<div class="absolute bottom-6 left-6">
+							<div
+								class="absolute bottom-6 inset-x-0 mx-auto flex justify-center w-full"
+							>
 								<span
-									class="bg-white text-black px-3 py-1 rounded-full text-sm font-bold"
-									>3D</span
+									class="bg-white text-brand-black px-8 py-3 rounded-[32px] text-sm font-sans font-bold shadow-sm"
+									>Impresión</span
 								>
 							</div>
-						</div>
-						<div
-							class="md:col-span-4 row-span-1 bg-white rounded-3xl p-6 relative group overflow-hidden flex items-center justify-center"
-						>
-							<span
-								class="text-black font-serif text-3xl text-center"
-								>Ver más<br />proyectos &rarr;</span
-							>
 						</div>
 					</div>
 				</div>
@@ -333,11 +425,37 @@ const plans = [
 			<!-- Team Section -->
 			<section class="h-screen w-full flex flex-col justify-center px-4">
 				<div class="w-[80%] mx-auto">
-					<h2
-						class="text-6xl md:text-8xl font-rinter font-light mb-16 text-center tracking-tighter text-zinc-900 dark:text-white"
-					>
-						El <span class="font-rinter italic font-bold">Mix</span> Team
-					</h2>
+					<div class="flex flex-col items-center mb-16 relative">
+						<div class="absolute -top-10 text-brand-orange">
+							<svg
+								width="40"
+								height="40"
+								viewBox="0 0 100 100"
+								class="fill-current"
+							>
+								<path
+									d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+								></path>
+							</svg>
+						</div>
+						<h2
+							class="text-6xl md:text-[10vw] font-display mb-4 text-center tracking-tighter text-brand-black"
+						>
+							El Mix Team
+						</h2>
+						<div class="text-brand-orange">
+							<svg
+								width="30"
+								height="30"
+								viewBox="0 0 100 100"
+								class="fill-current"
+							>
+								<path
+									d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+								></path>
+							</svg>
+						</div>
+					</div>
 
 					<div
 						class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
@@ -346,7 +464,7 @@ const plans = [
 							team.map((member) => (
 								<div class="relative group">
 									<div
-										class={`aspect-square rounded-3xl overflow-hidden mb-4 ${member.bg}`}
+										class={`aspect-square rounded-4xl overflow-hidden mb-4 ${member.bg}`}
 									>
 										<img
 											src={member.img}
@@ -354,7 +472,7 @@ const plans = [
 											class="w-full h-full object-cover mix-blend-multiply opacity-80 group-hover:opacity-100 transition-opacity grayscale group-hover:grayscale-0"
 										/>
 									</div>
-									<div class="bg-white dark:bg-zinc-800 p-4 rounded-2xl shadow-sm border border-zinc-100 dark:border-zinc-700 absolute bottom-8 left-4 right-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
+									<div class="bg-white p-4 rounded-4xl shadow-sm border border-zinc-100 absolute bottom-8 left-4 right-4 transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
 										<p class="font-serif italic text-lg mb-2 text-zinc-900 dark:text-gray-100">
 											"{member.quote}"
 										</p>
@@ -383,7 +501,7 @@ const plans = [
 							>Suscripciones</span
 						>
 						<h2
-							class="text-5xl md:text-7xl font-rinter text-zinc-900 leading-none"
+							class="text-8xl md:text-[10vw] font-display text-brand-black leading-none"
 						>
 							Planes<br />Mensuales
 						</h2>
@@ -393,7 +511,7 @@ const plans = [
 						{
 							plans.map((plan) => (
 								<div
-									class={`rounded-[2rem] p-8 flex flex-col h-full border border-black/5 dark:border-white/10 shadow-sm transition-transform hover:-translate-y-2 ${plan.bg}`}
+									class={`rounded-4xl p-8 flex flex-col h-full border border-black/5 shadow-sm transition-transform hover:-translate-y-2 ${plan.bg}`}
 								>
 									<div class="mb-8">
 										<span class="text-sm font-bold uppercase tracking-widest opacity-60">
@@ -410,7 +528,7 @@ const plans = [
 											</li>
 										))}
 									</ul>
-									<div class="text-5xl font-serif font-bold tracking-tighter">
+									<div class="text-6xl font-sans font-bold tracking-tighter">
 										${plan.price}
 									</div>
 								</div>
@@ -445,8 +563,20 @@ const plans = [
 								stroke="currentColor"
 								stroke-width="2"></path>
 						</svg>
+						<div class="mb-4">
+							<svg
+								width="60"
+								height="60"
+								viewBox="0 0 100 100"
+								class="mx-auto fill-current text-brand-black opacity-30"
+							>
+								<path
+									d="M50 0 L55 40 L95 15 L60 45 L100 50 L60 55 L95 85 L55 60 L50 100 L45 60 L5 85 L40 55 L0 50 L40 45 L5 15 L45 40 Z"
+								></path>
+							</svg>
+						</div>
 						<h2
-							class="text-[12vw] font-rinter leading-none tracking-tighter mb-4"
+							class="text-[15vw] md:text-[12vw] font-display leading-none tracking-tighter mb-8"
 						>
 							Hablamos?
 						</h2>
@@ -482,13 +612,25 @@ const plans = [
 							</ul>
 						</div>
 						<div>
-							<h4 class="mb-4 opacity-50 font-rinter">Contacto</h4>
+							<h4 class="mb-4 opacity-50 font-rinter">
+								Contacto
+							</h4>
 							<ul class="space-y-2">
 								<li>
-									<a href="mailto:hola@sancocho.studio" class="hover:underline">hola@sancocho.studio</a>
+									<a
+										href="mailto:hola@sancocho.studio"
+										class="hover:underline"
+										>hola@sancocho.studio</a
+									>
 								</li>
 								<li>
-									<a href="https://wa.me/+34633757804" target="_blank" rel="noopener noreferrer" class="hover:underline">WhatsApp: +34 633 75 78 04</a>
+									<a
+										href="https://wa.me/+34633757804"
+										target="_blank"
+										rel="noopener noreferrer"
+										class="hover:underline"
+										>WhatsApp: +34 633 75 78 04</a
+									>
 								</li>
 							</ul>
 						</div>

@@ -5,22 +5,23 @@ export default {
     theme: {
         extend: {
             colors: {
-                'brand-cream': '#F2F4EB',    // Gray sand
-                'brand-orange': '#FF7640',   // Orange
-                'brand-green': '#074C41',    // Deep water Green
-                'brand-black': '#161616',    // Pale Black
-                'menu-1': '#FFE1D9',         // Peach sand
-                'menu-2': '#B6A5FF',         // Purple moody
-                'menu-3': '#FFA7E5',         // Pink
-                'menu-4': '#C6F6B6',         // Verde Apple
-                'menu-5': '#074C41',         // Deep water Green
-                'menu-6': '#161616',         // Pale Black
+                'brand-cream': '#FBF7EE',    // True DNA Cream
+                'brand-orange': '#FF6B35',   // DNA Orange
+                'brand-black': '#1A1A1A',    // DNA Carbon Black
+                'menu-1': '#F3EDE2',         // Block 1: Beige
+                'menu-2': '#FCE6EA',         // Block 2: Pale Pink
+                'menu-3': '#A3F7A3',         // Block 3: Mint Green
+                'menu-4': '#BCB0FF',         // Block 4: Lavender
+                'menu-5': '#FF6B35',         // Block 5: Orange
+                'menu-6': '#1A1A1A',         // Block 6: Black
             },
             fontFamily: {
-                serif: ['"Playfair Display"', 'serif'],
-                sans: ['"Space Grotesk"', 'sans-serif'],
-                linear: ['"Linear Grotesk"', 'sans-serif'],
-                rinter: ['"Rinter"', 'sans-serif'],
+                display: ['Rinter', 'serif'],
+                sans: ['"Linear Grotesk"', 'Inter', 'sans-serif'],
+                mono: ['monospace'],
+            },
+            borderRadius: {
+                '4xl': '32px',
             }
         },
     },
